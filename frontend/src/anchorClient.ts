@@ -1,6 +1,7 @@
-import { AnchorProvider, BN, Idl, Program, setProvider } from '@coral-xyz/anchor'
-import { Connection, PublicKey } from '@solana/web3.js'
-import { WalletContextState } from '@solana/wallet-adapter-react'
+import { AnchorProvider, BN, Program, setProvider } from '@coral-xyz/anchor'
+import type { Idl } from '@coral-xyz/anchor'
+import { Connection } from '@solana/web3.js'
+import type { WalletContextState } from '@solana/wallet-adapter-react'
 
 // Minimal subset of IDL for types; in production import generated IDL JSON
 export const AHORRO_IDL: Idl = {
@@ -37,8 +38,7 @@ export function getProgram(wallet: WalletContextState) {
 	// Wallet adapter implements only needed interface
 	const provider = new AnchorProvider(connection, wallet as any, { commitment: 'confirmed' })
 	setProvider(provider)
-	const programId = new PublicKey(import.meta.env.VITE_AHORRO_PROGRAM_ID)
-	return new Program(AHORRO_IDL, programId, provider)
+	return new Program(AHORRO_IDL, provider)
 }
 
 export type { Program }
