@@ -3,10 +3,12 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-ahorro = "Ez7nS3RhjdeYknDMJSrunJE1wbACMg7yN4YTgFmkHkQz"
+thrift = "Thrift111111111111111111111111111111111111111"
+insurance = "Insurance111111111111111111111111111111111111"
 
 [programs.devnet]
-ahorro = "Ez7nS3RhjdeYknDMJSrunJE1wbACMg7yN4YTgFmkHkQz"
+thrift = "Thrift111111111111111111111111111111111111111"
+insurance = "Insurance111111111111111111111111111111111111"
 
 [registry]
 url = "https://api.apr.dev"
